@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ObjectResponse } from '../core/base/service/backend-service';
 import { Pedido } from '../Admistracion/Models/pedido.model';
 import { DetallePedido } from '../Admistracion/Models/detallePedido.model';
+import { enviroment } from 'src/enviroments/enviroment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,8 @@ import { DetallePedido } from '../Admistracion/Models/detallePedido.model';
 export class PedidoService {
 
 
-  private urlApiPedido = 'http://localhost:8080/pedido'; 
-  private urlApiDetalle = 'http://localhost:8080/detallePedido'; 
+  private urlApiPedido = enviroment.backendUrl+'/pedido'; 
+  private urlApiDetalle = enviroment.backendUrl+'/detallePedido'; 
   constructor(private readonly http: HttpClient) { }
 
 

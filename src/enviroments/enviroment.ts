@@ -1,4 +1,4 @@
 export const enviroment={
     production:false,
-    backendUrl:'http://localhost:8080'
+    backendUrl:'https://lonely-range-production.up.railway.app'
 }

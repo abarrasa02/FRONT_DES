@@ -2,11 +2,12 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ObjectResponse } from '../core/base/service/backend-service';
+import { enviroment } from 'src/enviroments/enviroment';
 @Injectable({
   providedIn: 'root'
 })
 export class StockService {
-  private urlApi = 'http://localhost:8080/stock'; 
+  private urlApi = enviroment.backendUrl+'/stock'; 
   constructor(private readonly http: HttpClient) { }
 
   

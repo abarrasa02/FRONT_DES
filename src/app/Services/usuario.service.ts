@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Usuario } from '../Admistracion/Models/usuario.model';
+import { enviroment } from 'src/enviroments/enviroment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { Usuario } from '../Admistracion/Models/usuario.model';
 export class UsuarioService {
 
 
-  private urlApi='http://localhost:8080/usuario'
+  private urlApi=enviroment.backendUrl+'/usuario'
   constructor(private readonly http: HttpClient) { }
 
   

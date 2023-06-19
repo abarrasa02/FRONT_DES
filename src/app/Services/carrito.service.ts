@@ -4,13 +4,14 @@ import { ObjectResponse } from '../core/base/service/backend-service';
 import { Observable } from 'rxjs';
 import { Producto } from '../Admistracion/Models/producto.model';
 import { carrito } from '../Admistracion/Models/carrito.model';
+import { enviroment } from 'src/enviroments/enviroment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarritoService {
 
-  private urlApi = 'http://localhost:8080/carrito'; 
+  private urlApi = enviroment.backendUrl+'/carrito'; 
   constructor(private readonly http: HttpClient) { 
  
   }
