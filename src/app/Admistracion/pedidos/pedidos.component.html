@@ -1,0 +1,20 @@
+<app-header-menu></app-header-menu>
+<table class="styled-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Usuario</th>
+        <th>Total</th>
+        <th>Fecha de Pedido</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pedido of listPedido">
+        <td>{{ pedido.id }}</td>
+        <td>{{ pedido.usuario.nombre }}</td>
+        <td>{{ pedido.total }} € </td>
+        <td>{{ pedido.fechaPedido | date }}</td>
+      </tr>
+    </tbody>
+  </table>
+  

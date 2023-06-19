@@ -1,0 +1,73 @@
+
+<app-header-menu></app-header-menu>
+  <section class="shopping-cart spad">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="shopping__cart__table">
+            <div class="table-responsive">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of listCarritoItem">
+                    <td class="product__cart__item d-flex">
+                      <div class="product__cart__item__pic">
+                        <img [src]="'data:image/jpeg;base64,' + item.producto?.imagen" alt="">
+                      </div>
+                      <div class="product__cart__item__text">
+                        <h6>{{item.producto.nombre}}</h6>
+                        <h5>${{item.producto.precio.toFixed(2)}}</h5>
+                      </div>
+                    </td>
+                    <td class="quantity__item">
+                      <div class="quantity">
+                        <div class="pro-qty-2">
+                          <span class="fa fa-angle-left dec qtybtn" [class.disabled]="item.cantidad === 1" (click)="decrementQuantity(item)"></span>
+                          <input type="text" [value]="item.cantidad">
+                          <span class="fa fa-angle-right inc qtybtn" (click)="incrementQuantity(item)"></span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="cart__price">{{(item.producto.precio * item.cantidad).toFixed(2)}} €</td>
+                    <td class="cart__close"><a (click)="eliminarProdcutoCarrito(item.id)" class="close"><i class="fa fa-close"></i></a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <div class="continue__btn">
+                <a href="">Continuar comprando</a>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <div class="continue__btn update__btn">
+                <a (click)="actualizarCarrito(listCarritoItem)"><i class="fa fa-spinner"></i> Actualizar carrito</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="cart__total">
+            <h6>Total del carrito</h6>
+            <ul>
+              <li>Total <span> {{totalPrecio.toFixed(2)}} €</span></li>
+            </ul>
+            <div (click)="crearPedido()"   id="paypal-button-container"></div>
+             <a  (click)="crearPedido()" class="primary-btn" *ngIf="listCarritoItem[0]">Continuar al pago</a> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>  
+<div style="margin-top: 100px;">
+  <app-footer></app-footer>
+</div>

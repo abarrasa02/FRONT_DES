@@ -1,0 +1,6 @@
+/* You can add global styles to this file, and also import other style files */
+// ...
+@import 'primeicons/primeicons.css';
+*:not(input){
+    cursor: default; /* Esto hará que el cursor se mantenga como una flecha normal en toda la aplicación */
+}

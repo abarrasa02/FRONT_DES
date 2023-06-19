@@ -1,0 +1,24 @@
+<app-header-menu></app-header-menu>
+<body>
+<div class="center">  
+    <h1>Inicio sesion</h1>
+    <form method="post">
+        <div class="txt_field">
+            <input type="text"  name="usuario" [(ngModel)]="usuario" required>
+            <label>Usuario</label>
+        </div>
+        <div class="txt_field">
+            <input type="password" name="contrasena" [(ngModel)]="contrasena" required>
+            <label>Contraseña</label>
+        </div>
+        <span class="error-message" *ngIf="isErrorMessage">{{errorMessage}}</span>
+        <input type="button" value="Iniciar sesion" (click)="login()">
+        <div class="signup_link">
+            <a (click)="register()">Registrate aqui</a>
+        </div>
+    </form>
+</div>
+</body>
+
+<app-footer></app-footer>
+

@@ -1,0 +1,56 @@
+<app-header-menu></app-header-menu>
+<body>
+    <div class="container">
+        <header>Registrarse</header>
+        <form action="#">
+            <div class="form first">
+                <div class="details personal">
+                    
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Nombre</label>
+                            <input type="text" placeholder="Nombre" name="nombre" [(ngModel)]="user.nombre" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Apellidos</label>
+                            <input type="text" placeholder="Apellidos" name="apellido" [(ngModel)]="user.apellido" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Email</label>
+                            <input type="text" placeholder="Email"  name="email" [(ngModel)]="user.email" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Contraseña</label>
+                            <input type="password" placeholder="Contraseña" name="contrasena" [(ngModel)]="user.contrasena" required >
+                        </div>
+                        <div class="input-field">
+                            <label> Confirmar contraseña</label>
+                            <input type="password" placeholder="Contraseña"  required>
+                        </div>
+                        <div class="input-field">
+                            <label>Pais</label>
+                            <input type="text" placeholder="Pais" name="pais" [(ngModel)]="user.pais" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Dirección</label>
+                            <input type="text" placeholder="Dirección" name="direccion" [(ngModel)]="user.direccion" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Codigo Postal</label>
+                            <input type="text" placeholder="Codigo Postal" name="codigoPostal" [(ngModel)]="user.codigoPostal" required>
+                        </div> 
+                        <div class="input-field">
+                            <label>Telefono</label>
+                            <input type="number" placeholder="Telefono" name="telefono" [(ngModel)]="user.telefono" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="details ID">
+                   
+                    <button (click)="registerUser()">
+                        <span class="btnText">Registrate</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                </div> 
+            </div>
+            

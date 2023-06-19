@@ -1,0 +1,22 @@
+<div class="container d-flex justify-content-center">
+  <form class="form-container" (ngSubmit)="onSubmit()">
+    <div *ngIf="errorMensaje" class="error-message" style="color: red;">{{ errorMensaje }}</div>
+    <div class="form-group" style="margin-bottom: 10px;">
+      <label for="nombre" style="display: block; font-weight: bold;">Nombre:</label>
+      <input type="text" id="nombre" pInputText [(ngModel)]="categoria.nombre" name="nombre" required [class.input-error]="categoria.nombre.trim() === '' && showError">
+    </div>
+
+    <div class="form-group" style="margin-bottom: 10px;">
+      <div *ngIf="errorMensajeImage" class="error-message" style="color: red;">{{ errorMensajeImage }}</div>
+      <label for="imagen" style="display: block; font-weight: bold;">Imagen:</label>
+      <input type="file" id="imagen" class="form-control" accept=".jpeg,.jpg" (change)="onFileChange($event)" name="imagen" required>
+    </div>
+
+    <div class="form-group" style="margin-bottom: 10px;">
+      <label for="activo" style="display: block; font-weight: bold;">Activo:</label>
+      <input type="text" id="activo" pInputText [(ngModel)]="categoria.activo" name="activo" required [class.input-error]="categoria.activo.trim() === '' && showError">
+    </div>
+
+    <button *ngIf="isSubmit" type="submit" pButton>Guardar categoria</button>
+  </form>
+</div>

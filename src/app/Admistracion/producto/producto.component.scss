@@ -1,0 +1,21 @@
+table img {
+    width: 1px;
+    height: 1px;
+  }
+  
+    
+  .button-container {
+    position: fixed;
+    top: 120px; /* Ajusta la distancia desde la parte superior de la pantalla según sea necesario */
+    right: 20px; /* Ajusta la distancia desde el borde derecho de la pantalla según sea necesario */
+    z-index: 9999; /* Asegura que el botón esté en la parte superior de otros elementos */
+  }
+
+  .edit-button {
+    margin-right: 3px;
+}
+
+.add-button {
+    position: relative;
+    left: 10px; /* You can adjust this value */
+}

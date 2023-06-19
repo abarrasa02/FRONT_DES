@@ -1,0 +1,11 @@
+<app-header-menu></app-header-menu>
+<div class="carousel-container">
+    <div class="carousel-item" *ngFor="let categoria of ListCategorias">
+      <div (click)="filtrarCategoria(categoria.id)" class="image-container">
+        <img [src]="'data:image/jpeg;base64,' + categoria?.imagen" alt="{{ categoria.nombre }}">
+        <h3 >{{ categoria.nombre }}</h3>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+<router-outlet></router-outlet>

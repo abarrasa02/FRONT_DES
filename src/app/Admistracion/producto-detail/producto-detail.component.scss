@@ -1,0 +1,23 @@
+.p-field {
+    margin-bottom: 1rem;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .form-container {
+    max-width: 400px;
+    margin: 0 10px;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  .input-error {
+    border: 1px solid red;
+}
+
+  
